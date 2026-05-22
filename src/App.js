@@ -13,13 +13,12 @@ const App = () => {
   return (
     <div style={{ position: "relative" }}>
       <MyNavbar />
-      <MainBlock />
       <MyTitleMessage />
       <About />
       <Skills />
-      {/* <Experience /> */}
-      {/* <Projects />
-      <ContactForm /> */}
+      <Experience />
+      <Projects />
+      <ContactForm /> 
     </div>
   );
 };

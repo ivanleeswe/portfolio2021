@@ -1,95 +1,117 @@
-import React from 'react'
-import restaurantVid from "../../../src/assets/img/projects/restaurant.mp4"
-import shelterTechVid from "../../../src/assets/img/projects/shelterTech.mp4"
-import toDoListVid from "../../../src/assets/img/projects/toDoList.mp4"
-import exerciseTrackerVid from "../../../src/assets/img/projects/exerciseTracker.mp4"
+import React from "react";
+import Container from "react-bootstrap/Container";
 
-import "./projects.css"
+import restaurantVid from "../../../src/assets/img/projects/restaurant.mp4";
+import shelterTechVid from "../../../src/assets/img/projects/shelterTech.mp4";
 
-function projects() {
+import "./projects.css";
+
+const projectGroups = [
+  {
+    title: "FluffyPuppy",
+    label: "AI-Powered Pet Care & Adoption Platform",
+    tech: [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "pgvector",
+      "OpenAI",
+      "Vercel",
+      "Render",
+    ],
+    description:
+      "A full-stack platform for dog boarding, sitter booking, owner profiles, adoption discovery, semantic search, AI-powered matching, and real adoption data ingestion.",
+    link: "https://fluffypuppy.xyz.com",
+    featured: true,
+  },
+  {
+    title: "ShelterTech",
+    label: "Open-Source Nonprofit Website",
+    tech: [
+      "React",
+      "TypeScript",
+      "Storybook",
+      "Figma",
+      "Responsive UI",
+      "Open Source",
+    ],
+    description:
+      "Contributed to a production nonprofit website helping underserved communities access important resources through technology.",
+    link: "https://github.com/ShelterTechSF/sheltertech.org",
+    video: shelterTechVid,
+  },
+  {
+    title: "Restaurant Website",
+    label: "Responsive Business Website",
+    tech: ["JavaScript", "React", "HTML", "CSS", "Responsive Design"],
+    description:
+      "Built a responsive restaurant website so customers could access menu information and business resources across desktop and mobile devices.",
+    link: "https://github.com/ivanleeswe/newasianpearlwebsite",
+    video: restaurantVid,
+  },
+];
+
+const Projects = () => {
   return (
-    <div id="projects" style={{paddingTop:"45px"}}>
-      <h1 className="pt-3 text-center font-details-b pb-3"  >PRO<span  style={{color:"yellow"}} >JECTS</span></h1>
+    <section id="projects" className="projects-section">
+      <Container>
+        <div className="projects-heading">
+          <p className="section-kicker">SELECTED WORK</p>
 
-      <div className="grid-container">
-        <div className="grid-item">
-          <video idth="320" height="240" controls>
-            <source src={restaurantVid}  type="video/mp4"/>
-          </video>
-          <div className="text">
-            <a href="https://github.com/ivanleeswe/newasianpearlwebsite" className="link">
-              Restaurant Website
-            </a>
-            <div className="techStack">
-              JavaScript, React, HTML, CSS
-            </div>
-            <br/>
-            <br/>
-            <div className="description">
-              Come check out our menu whether you are on your desktop or phone! I built this responsive website for customers to access to restaurant resources on all devices.
-            </div>
-          </div>
+          <h1>
+            Projects that show product thinking, full-stack systems, and
+            real-world execution.
+          </h1>
         </div>
 
-        <div className="grid-item">
-          <video idth="320" height="240" controls>
-            <source src={shelterTechVid}  type="video/mp4"/>
-          </video>
-          <div className="text">
-            <a href="https://github.com/ShelterTechSF/sheltertech.org" className="link">
-              ShelterTech Website
-            </a>
-            <div className="techStack">
-              JavaScript, React, HTML, CSS, TypeScript, Storybook, Clubhouse, Figma
-            </div>
-            <br/>
-            <div className="description">
-              Technology is needed for the homeless population to get the help they need. I am proud to have been part of this open-source project to build and successfully launch the website for ShelterTech, a non-profit organization.
-            </div>
-          </div>
+        <div className="projects-grid">
+          {projectGroups.map((project, index) => (
+            <article
+              className={`project-card ${project.featured ? "featured-project" : ""}`}
+              key={index}
+            >
+              {project.video ? (
+                <video className="project-video" controls>
+                  <source src={project.video} type="video/mp4" />
+                </video>
+              ) : (
+                <div className="project-placeholder">
+                  <span>AI</span>
+                </div>
+              )}
+
+              <div className="project-content">
+                <p className="project-label">{project.label}</p>
+
+                <h2>{project.title}</h2>
+
+                <p className="project-description">{project.description}</p>
+
+                <div className="project-tech">
+                  {project.tech.map((item, techIndex) => (
+                    <span key={techIndex}>{item}</span>
+                  ))}
+                </div>
+
+                {project.link && (
+                  <a
+                    href={project.link}
+                    className="project-link"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    View Project
+                  </a>
+                )}
+              </div>
+            </article>
+          ))}
         </div>
+      </Container>
+    </section>
+  );
+};
 
-        <div className="grid-item">
-          <video idth="320" height="240" controls>
-            <source src={toDoListVid}  type="video/mp4"/>
-          </video>
-          <div className="text">
-            <a href="https://github.com/ivanleeswe/todolist-reacthooks" className="link">
-              To Do List
-            </a>
-            <div className="techStack">
-              JavaScript, React, HTML, CSS, React Hooks
-            </div>
-            <br/>
-            <br/>
-            <div className="description">
-              Need to keep track of your tasks? Here's the app for it! I built this using React and then built it again using React hooks.
-            </div>
-          </div>
-        </div>
-
-        <div className="grid-item">
-          <video idth="320" height="240" controls>
-            <source src={exerciseTrackerVid}  type="video/mp4"/>
-          </video>
-          <div className="text">
-            <a href="https://github.com/ivanleeswe/ExerciseTracker/tree/master/backend" className="link">
-              Exercise Tracker
-            </a>
-            <div className="techStack">
-              JavaScript, React, HTML, CSS, MongoDB Atlas, React router, Bootstrap, Mongoose, Express, Node.js
-            </div>
-            <br/>
-            <br/>
-            <div className="description">
-              Keeping track of our workouts is essential to mad gains! Built this application with the MERN stack.
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  )
-}
-
-export default projects
+export default Projects;

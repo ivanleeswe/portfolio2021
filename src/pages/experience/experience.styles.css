@@ -1,16 +1,72 @@
-.img-resize {
-  width: 10em;
+.experience-section {
+  padding: 110px 0;
+  background: #050505;
+  color: white;
 }
 
-.style {
-  font-size: 15px;
+.section-kicker {
+  color: #ffe066;
+  letter-spacing: 7px;
+  font-weight: 400;
+  text-transform: uppercase;
 }
 
-.jumbo-style {
-  background-image: linear-gradient(-225deg, #3dfffc 0%, #000 48%, #fffb13 100%);
+.experience-heading h1 {
+  color: white;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 100;
+  letter-spacing: 12px;
+  line-height: 1.05;
 }
 
-.body-title-style {
-  font-size: 15px;
-  font-weight: 800;
+.experience-timeline {
+  border-top: 1px solid rgba(0,255,255,0.35);
+}
+
+.experience-row {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 44px;
+  padding: 38px 0;
+  border-bottom: 1px solid rgba(0,255,255,0.22);
+}
+
+.experience-meta span {
+  color: aqua;
+  letter-spacing: 3px;
+  font-size: 0.85rem;
+}
+
+.experience-title-line h2 {
+  color: white;
+  font-weight: 300;
+  letter-spacing: 5px;
+}
+
+.experience-title-line p {
+  color: aqua;
+  letter-spacing: 2px;
+}
+
+.experience-stack {
+  color: rgba(0,255,255,0.85);
+  letter-spacing: 1px;
+}
+
+.experience-main li {
+  color: rgba(255,255,255,0.76);
+  line-height: 1.75;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.experience-main li::marker {
+  color: aqua;
+}
+
+@media (max-width: 820px) {
+  .experience-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
 }

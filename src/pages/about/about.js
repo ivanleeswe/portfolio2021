@@ -1,72 +1,85 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import "./about.styles.css";
-import Profile from "../../assets/img/profile/MyProfilePhoto.JPG";
 import Image from "react-bootstrap/Image";
 import Button from "react-bootstrap/Button";
+import Profile from "../../assets/img/profile/MyProfilePhoto.JPG";
+import Resume from "../../assets/Ivan_Lee_resume.pdf"
+import "./about.styles.css";
 
 const About = () => {
   return (
-    <div id="about">
-      <div className="about">
-        <h1 className="pt-3 text-center font-details pb-3">ABOUT ME</h1>
-        <Container>
-          <Row className="pt-3 pb-5 align-items-center">
-            <Col xs={12} md={6}>
-              <Row className="justify-content-center mb-2 mr-2 ">
-                <Image className="profile justify-content-end" alt="profile" src={Profile} thumbnail fluid />
-              </Row>
-            </Col>
-            <Col xs={12} md={6}>
-              <Row className=" align-items-start p-2 my-details rounded">
-                Hi there! I am <strong>&nbsp;Anand Kumar Jha</strong>
-                <br />A passionate programmer and a Coach, born and brought up in India. I am a Full Stack Web Developer with React.js, Redux, Express.js, Node.js, and PostgreSQL as my tech stack.
-                <br />
-                In 2019, I successfully completed my Engineering with specialization in 'Electronics and Telecommunication'.
-                <br />
-                Working with the clients, my goal is always driven towards providing amazing experience with the best level of quality and service to them.
-                <br />
-                Along with that, I also help people as a COACH on their journey of becoming a professional programmer. 
-                <br />I love learning about new technologies, what problems are they solving and How can I use them to build better and scalable products.
-                <br /> <br />
-                <Col className="d-flex justify-content-center flex-wrap">
-                  <div>
-                    <a href="#contact">
-                      <Button className="m-2" variant="outline-primary">
-                        Let's talk
-                      </Button>
-                    </a>
-                  </div>
-                  <div>
-                    <a href="https://drive.google.com/file/d/1Snbq3x4Itk_ZN4c8J96aNdp4SunXR08Y/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-                      <Button className="m-2" variant="outline-success">
-                        My Resume
-                      </Button>
-                    </a>
-                  </div>
-                  <div>
-                    <a href="https://github.com/akjha96" target="_blank" rel="noopener noreferrer">
-                      <Button className="m-2" variant="outline-dark">
-                        GitHub
-                      </Button>
-                    </a>
-                  </div>
-                  <div>
-                    <a href="https://www.linkedin.com/in/anand-kumar-jha-745798a4/" target="_blank" rel="noopener noreferrer">
-                      <Button className="m-2" variant="outline-info">
-                        LinkedIn
-                      </Button>
-                    </a>
-                  </div>
-                </Col>
-              </Row>
-            </Col>
-          </Row>
-        </Container>
-      </div>
-    </div>
+    <section id="about" className="about-section">
+      <Container>
+        <div className="about-heading">
+          <div className="section-kicker">ABOUT ME</div>
+          <h1>Full-stack software engineer with a product-first mindset.</h1>
+        </div>
+
+        <div className="about-layout">
+          <div className="about-meta">
+            <div className="about-image-wrap">
+              <Image src={Profile} alt="Ivan Lee" className="about-image" fluid />
+            </div>
+          </div>
+
+          <div className="about-main">
+            <p>
+              I’m Ivan Lee, a software engineer who enjoys building complete,
+              user-focused products from polished interfaces to reliable backend
+              systems. My work spans customer-facing websites, internal tools,
+              data-driven dashboards, marketplace workflows, and production web
+              applications.
+            </p>
+
+            <p>
+              I care about more than just writing code. I think through how
+              systems should behave, how users move through a product, how data
+              should be structured, and how each part of an application connects
+              into a reliable experience.
+            </p>
+
+            <p>
+              Recently, I’ve been building FluffyPuppy, a full-stack pet care
+              and adoption platform with marketplace workflows, booking logic,
+              sitter and owner communication, real adoption data pipelines,
+              intelligent matching, search relevance, and production deployment.
+            </p>
+
+            <p>
+              I’m strongest in environments where product, engineering, design,
+              data, and systems thinking all come together to solve real
+              problems.
+            </p>
+
+            <div className="about-actions">
+              <a href="#contact">
+                <Button className="portfolio-btn primary">Let&apos;s Talk</Button>
+              </a>
+
+              <a href={Resume} target="_blank" rel="noopener noreferrer">
+                <Button className="portfolio-btn">Resume</Button>
+              </a>
+
+              <a
+                href="https://github.com/ivanleeswe"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button className="portfolio-btn">GitHub</Button>
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/ivanleeswe/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button className="portfolio-btn">LinkedIn</Button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </Container>
+    </section>
   );
 };
 
